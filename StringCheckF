@@ -1,0 +1,59 @@
+import java.util.*;
+
+public class StringCheckF
+{
+    static int Check(String str1, String str2)
+    {
+        int result = 0;
+        if (str1.length() == str2.length())
+        {
+            for (int i = 0; i < str1.length(); i++)
+            {
+                if (str1.charAt(i) != str2.charAt(i))
+                {
+                    result = 2;
+                    break;
+                }
+                else
+                    result = 0;
+            }
+            for (int i = 0; i < str1.length(); i++)
+            {
+                str1 = str1.toLowerCase();
+                str2 = str2.toLowerCase();
+                if (str1.charAt(i) != str2.charAt(i))
+                {
+                    result = 2;
+                    break;
+                }
+                else
+                    if (result != 0)
+                    {
+                        result = 1;
+                    }
+                    else
+                        result = 0;
+            }
+        }
+        else
+            result = 2;
+        return result;
+    }
+    public static void main (String [] args)
+        {
+            String str_1,str_2;
+            int ans;
+            System.out.println("Enter the string to be checked:");
+            Scanner scan = new Scanner(System.in);
+            str_1 = scan.nextLine();
+            System.out.println("Enter the other string:");
+            str_2 = scan.nextLine();
+            ans = Check(str_1,str_2);
+            if (ans == 0)
+                System.out.println("The strings are same with case sensitive approach.");
+            else if (ans == 1)
+                System.out.println("The strings are same without case sensitive approach.");
+            else
+                System.out.println("The strings are not same.");
+        }
+}
