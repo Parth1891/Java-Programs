@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class StringCheck {
+    public static void main (String[] args){
+        System.out.println("Enter your string to be checked:");
+        Scanner scan = new Scanner(System.in);
+        String sent_1 = scan.nextLine();
+        System.out.println("Enter the other string:");
+        Scanner obj = new Scanner(System.in);
+        String sent_2 = obj.nextLine();
+        int count = 0;
+        /* for without case sensitive:
+           sent_1 = sent_1.toLowerCase();
+           sent_2 = sent_2.toLowerCase();
+        */
+        if (sent_1.length() == sent_2.length())
+        {
+            for (int i=0;i<sent_1.length();i++)
+            {
+                if (sent_1.charAt(i) != sent_2.charAt(i))
+                {
+                    count++;
+                    break;
+                }
+            }
+            if (count == 0)
+            {
+                System.out.println("They are same strings.");
+            }
+            else
+            {
+                System.out.println("They are not same strings.");
+            }
+        }
+        else
+        {
+            System.out.println("They are not same strings.");
+        }
+    }
+}
