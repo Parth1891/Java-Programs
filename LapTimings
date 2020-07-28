@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class LapTimings {
+    public static void main (String [] args){
+        System.out.println("Enter the first lap timing:");
+        Scanner a = new Scanner(System.in);
+        System.out.println("Enter minutes:");
+        int min1 = a.nextInt();
+        System.out.println("Enter seconds:");
+        int sec1 = a.nextInt();
+        System.out.println("Enter miliseconds");
+        int mili1 = a.nextInt();
+        System.out.println("Enter the second lap timing:");
+        System.out.println("Enter minutes:");
+        int min2 = a.nextInt();
+        System.out.println("Enter seconds:");
+        int sec2 = a.nextInt();
+        System.out.println("Enter miliseconds");
+        int mili2 = a.nextInt();
+        System.out.println("Enter the third lap timing:");
+        System.out.println("Enter minutes:");
+        int min3 = a.nextInt();
+        System.out.println("Enter seconds:");
+        int sec3 = a.nextInt();
+        System.out.println("Enter miliseconds");
+        int mili3 = a.nextInt();
+        System.out.println("The first Lap timing is: " + min1 + ":" + sec1 + ":" + mili1);
+        System.out.println("The second Lap timing is: " + min2 + ":" + sec2 + ":" + mili2);
+        System.out.println("The third Lap timing is: " + min3 + ":" + sec3 + ":" + mili3);
+        long one,two,three;
+        one = min1*60000+sec1*1000+mili1;
+        two = min2*60000+sec2*1000+mili2;
+        three = min3*60000+sec3*1000+mili3;
+        if (one < two && one < three)
+        {
+            System.out.println("First lap is the fastest");
+            System.out.println("The first Lap timing is: " + min1 + ":" + sec1 + ":" + mili1);
+        }
+        else if (two > three && two > one)
+        {
+            System.out.println("Second lap is the fastest");
+            System.out.println("The second Lap timing is: " + min2 + ":" + sec2 + ":" + mili2);
+        }
+        else
+        {
+            System.out.println("Third lap is the fastest");
+            System.out.println("The third Lap timing is: " + min3 + ":" + sec3 + ":" + mili3);
+        }
+        }
+    }
