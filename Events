@@ -1,0 +1,59 @@
+import java.util.Scanner;
+public class AccelerationEvent
+{
+    public static void main(String[] args)
+    {
+        long StartA=0,EndA=0,StartE=0,EndE=0,ResA,ResE,count=0;
+        int a,b,c;
+        do
+            {
+                System.out.println("Enter 0 to cancel");
+                System.out.println("Enter 1 to start Acceleration event");
+                System.out.println("Enter 2 to start Endurance event");
+                Scanner sc = new Scanner(System.in);
+                a = sc.nextInt();
+                if (a==1)
+                {
+                    StartA = System.currentTimeMillis();
+                }
+                else if (a == 2)
+                {
+                    if (count == 0)
+                    {
+                        StartE = System.currentTimeMillis();
+                    }
+                    else
+                    {
+                        StartE = EndE;
+                        if (a==2)
+                        {
+                            EndE = System.currentTimeMillis();
+                            ResE = EndE - StartE;
+                            count += 1;
+                            System.out.println("Endurance Event Time = " + ResE + "ms");
+                        }
+                    }
+                }
+                else
+                {
+                    System.exit(0);
+                }
+                System.out.println("Enter the same statement to end the event");
+                b=sc.nextInt();
+                if (b==1)
+                {
+                    EndA = System.currentTimeMillis();
+                    ResA = EndA - StartA;
+                    System.out.println("Acceleration Event Time = " + ResA + "ms");
+                }
+                else if (b == 2)
+                {
+                    EndE = System.currentTimeMillis();
+                    ResE = EndE - StartE;
+                    count += 1;
+                    System.out.println("Endurance Event Time = " + ResE + "ms");
+                }
+            }
+        while (true);
+    }
+}
