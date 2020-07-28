@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.*;
+public class InputMethods {
+    public static void main(String [] args) throws IOException {
+        // input using Buffered Reader
+        System.out.println("Enter your name: ");
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        String name = reader.readLine();
+        System.out.println(name);
+        // input using scanner class
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter your roll no: ");
+        int a = in.nextInt();
+        System.out.println("Roll no: "+a);
+        System.out.println("Enter your CGPA: ");
+        float b = in.nextFloat();
+        System.out.println("CGPA: "+b);
+    }
+}
