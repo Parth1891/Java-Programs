@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class WithoutMinus {
+    public static void main(String [] args){
+        System.out.println("Enter two digits:");
+        Scanner scan = new Scanner(System.in);
+        int a = scan.nextInt();
+        int b = scan.nextInt();
+        System.out.println("The two digits are: " + a + " & " + b);
+        while (b != 0)
+        {
+            int carry = (~a) & b;
+            a = a ^ b;
+            b = carry << 1;
+        }
+        System.out.println("The substraction is: " + a);
+    }
+}
