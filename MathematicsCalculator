@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class MathematicsCalculations {
+    public static void main(String[] args)
+    {
+        System.out.println("Enter the operation number to be performed:");
+        Scanner obj = new Scanner(System.in);
+        int num = obj.nextInt();
+        System.out.println("Enter first digit:");
+        Scanner scan = new Scanner(System.in);
+        int Num1 = scan.nextInt();
+        System.out.println("Enter second digit:");
+        Scanner scr = new Scanner(System.in);
+        int Num2 = scr.nextInt();
+        System.out.println("The two digits are: " + Num1 + " & " + Num2);
+        switch(num)
+        {
+            case 1:{
+                System.out.println("Addittion is " + (Num1 + Num2));
+                break;
+            }
+            case 2:
+            {
+                System.out.println("Substraction is " + Math.abs(Num1-Num2));
+                break;
+            }
+            case 3:
+            {
+                System.out.println("Multiplication is : " + (Num1*Num2));
+                break;
+            }
+            case 4:
+            {
+                System.out.println("Sin values are " + Math.sin(Num1) + " " +  Math.sin(Num2));
+                break;
+            }
+            case 5:
+            {
+                System.out.println("Cos values are " + Math.cos(Num1) + " " + Math.cos(Num2));
+                break;
+            }
+            case 6:
+            {
+                System.out.println("Tan values are " + Math.tan(Num1) + Math.tan(Num2));
+                break;
+            }
+            case 7:
+            {
+                System.out.println("Exponent values are " + Math.pow(Num1,Num2));
+                break;
+            }
+            default:
+            {
+                System.out.println("No operation to be performed.");
+                break;
+            }
+        }
+    }
+}
